@@ -1,14 +1,18 @@
 <?php
     $db_server = "localhost";
-    $bd_user = "root";
-    $bd_pass = "";
-    $bd_name = "businessbd";
+    $db_user = "root";
+    $db_pass = "";
+    $db_name = "businessdb";
     $conn = "";
 
-    if($conn){
-        echo "you are connected";
+    try{
+        $conn = mysqli_connect($db_server,
+                                $db_user,
+                                $db_pass,
+                                $db_name);
     }
-    else{
-        echo "you are not connected";
+
+    catch(mysqli_sql_exception){
+        echo "Could not connect! <br>";
     }
 ?>
